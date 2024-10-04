@@ -25,7 +25,7 @@ const ZigZagSection = ({ title, description, reverse, imgRoute }) => {
         <p className="mt-2 text-xl text-gray-300">{description}</p>
       </div>
       <div className="md:w-1/2  flex items-center justify-center">
-        <div className={`w-full ${imgRoute ? "border border-gray-700" : ""} h-full rounded-lg flex items-center justify-center hover:scale-105 ease-in-out transition delay-100`}>
+        <div className={`w-full ${imgRoute ? "" : ""} h-full rounded-lg flex items-center justify-center hover:scale-105 ease-in-out transition delay-100`}>
           {imgRoute ? 
             <Image src={imgRoute}            
               width={500}
