@@ -7,7 +7,7 @@ const Hero = () => {
             <div className="flex items-center content-center justify-center invisible">
                 <RiArrowDownWideLine size={100} color="white" />
             </div>
-            <div className="flex items-center content-center justify-center">
+            <div className="sm:flex items-center content-center justify-center">
                 <Image
                     src="/Isotipo BT.svg"
                     width={300}
