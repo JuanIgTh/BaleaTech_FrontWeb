@@ -32,19 +32,19 @@ export function FooterWithSitemap() {
             </div>
           ))}
         </div> */}
-<div className="flex justify-center w-1/3">                  <Typography
-            variant="small"
-            className="mb-4 text-center font-normal text-blue-900 "
-          >
-            &copy; {currentYear} <a href="">Baleatech</a>. All
-            Rights Reserved.
-          </Typography></div>
+        <div className="flex justify-center w-1/3">                  <Typography
+          variant="small"
+          className="mb-4 text-center font-normal text-blue-900 "
+        >
+          &copy; {currentYear} <a href="">Baleatech</a>. All
+          Rights Reserved.
+        </Typography></div>
         <div className=" flex justify-center w-1/3">
           <Image
-              src="/Isotipo BT.svg"
-             width={150}
+            src="/Isotipo BT.svg"
+            width={150}
             height={150}
-            alt="escubi"/>
+            alt="escubi" />
         </div>
         <div className="flex  justify-center w-1/3">
 
