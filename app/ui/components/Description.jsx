@@ -26,8 +26,8 @@ const ZigZagSection = ({ title, description, reverse, imgRoute }) => {
       </div>
       <div className="md:w-1/2  flex items-center justify-center">
         <div className={`w-full ${imgRoute ? "" : ""} h-full rounded-lg flex items-center justify-center hover:scale-105 ease-in-out transition delay-100`}>
-          {imgRoute ? 
-            <Image src={imgRoute}            
+          {imgRoute ?
+            <Image src={imgRoute}
               width={500}
               height={500}
               alt="escubi"
@@ -48,11 +48,11 @@ const Description = () => {
       <main className="  lg:pb-24 bg-[] bg-opacity-75 antialiased">
         <div className="px-4 mx-auto max-w-screen-xl">
           <header className="mb-16">
-            <h1  className="mt-5 text-6xl font-extrabold leading-tight lg:text-4xl text-white">
+            <h1 className="mt-5 text-6xl font-extrabold leading-tight lg:text-4xl text-white">
               Bienvenido a <span className="text-5xl text-baleatech-blue">BaleaTech</span>
             </h1>
             <p className="text-xl mt-4 text-gray-500 italic">
-              - Donde nace el compromiso tecnológico con las islas 
+              - Donde nace el compromiso tecnológico con las islas
             </p>
             <p className="text-xl mt-10 text-gray-300">
               Impulsamos la productividad y presencia de tu empresa con la solución Software que necesites, por eso te ofrecemos:
