@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { AiFillInstagram, AiFillPhone } from "react-icons/ai";
 import emailjs from '@emailjs/browser';
 import { FaSquareFacebook } from "react-icons/fa6";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 const ContactForm = () => {
 
@@ -62,20 +63,20 @@ const ContactForm = () => {
             <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-m content-center ">
                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center  text-baleatech-blue">Contacta con nosotros!</h2>
                 <p class="mb-4   lg:mb-8  text-center text-gray-500 text-gray-400 sm:text-xl">Estamos dispuesto a resolver cualquier duda, no dudes en escribirnos.</p>
-                <form action="#" class="space-y-8 ">
+                <form ref={form} onSubmit={sendEmail} action="#" class="space-y-8 ">
                     <div>
                         <label for="email" class="block mb-2 text-sm font-medium  text-gray-300">Email</label>
-                        <input type="email" id="email" class="shadow-sm  border border-gray-300 rounded-full text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 bg-gray-500  bg-opacity-50 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 shadow-sm-light" placeholder="tu-mail@mail.com" required></input>
+                        <input type="email" id="email" class="block p-3 w-full text-sm   rounded-xl border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 bg-gray-500 bg-opacity-50 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 shadow-sm-light" placeholder="tu-mail@mail.com" required></input>
                     </div>
                     <div>
                         <label for="subject" class="block mb-2 text-sm font-medium  text-gray-300">Asunto</label>
-                        <input type="text" id="subject" class="block p-3 w-full text-sm   rounded-full border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 bg-gray-500 bg-opacity-50 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 shadow-sm-light" placeholder="Cuéntanos tu idea" required></input>
+                        <input type="text" id="subject" class="block p-3 w-full text-sm   rounded-xl border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 bg-gray-500 bg-opacity-50 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 shadow-sm-light" placeholder="Cuéntanos tu idea" required></input>
                     </div>
                     <div class="sm:col-span-2">
                         <label for="message" class="block mb-2 text-sm font-medium  text-gray-400">Tu mensaje</label>
-                        <textarea id="message" rows="6" class="block p-3 w-full text-sm   rounded-3xl border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 bg-gray-500 bg-opacity-50 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 shadow-sm-light" placeholder="Deja un comentario..."></textarea>
+                        <textarea id="message" rows="6" class="block p-3 w-full text-sm resize-none	rounded-2xl border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 bg-gray-500 bg-opacity-50 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 shadow-sm-light" placeholder="Deja un comentario..."></textarea>
                     </div>
-                    <div>
+                    <div>   
                         <div className="text-center w-full ">
                             <button type="submit" class="py-3 px-5  text-sm font-medium text-center text-white rounded-full bg-baleatech-blue sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 bg-primary-600 hover:bg-baleatech-blue focus:ring-primary-800 ">Send message</button>
                         </div>
@@ -89,9 +90,9 @@ const ContactForm = () => {
                             <label htmlFor="">baleatech</label>
                         </div>
                     </a>
-                    <a href="">
+                    <a href="tel:555-555-5555">
                         <div className="flex content-center items-center">
-                            <AiFillPhone size={48} color="" className="text-baleatech-blue opacity-75 mr-2" />
+                            <IoLogoWhatsapp size={47} color="" className="text-baleatech-blue opacity-75 mr-2" />
                             <label htmlFor="">+34 640758702</label>
                         </div>
                     </a>

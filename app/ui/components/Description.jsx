@@ -1,6 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { useIsVisible } from "./functions/FadeAnimationTW";
+import HoverCard from "@darenft/react-3d-hover-card";
+import "@darenft/react-3d-hover-card/dist/style.css";
 
 const ZigZagSection = ({ title, description, reverse, imgRoute }) => {
   const ref = useRef();
@@ -20,19 +22,24 @@ const ZigZagSection = ({ title, description, reverse, imgRoute }) => {
       ${hasBeenVisible ? "opacity-100" : "opacity-0"} 
       ${!hasBeenVisible && isVisible ? (reverse ? "animate-fade-right" : "animate-fade-left") : ""}`}
     >
-      <div className="md:w-1/2  content-center">
+      <div className="md:w-1/2  content-center  ">
         <h2 className="text-5xl font-bold text-baleatech-blue">{title}</h2>
         <p className="mt-2 text-xl text-gray-300">{description}</p>
       </div>
       <div className="md:w-1/2  flex items-center justify-center">
-        <div className={`w-full ${imgRoute ? "" : ""} h-full rounded-lg flex items-center justify-center hover:scale-105 ease-in-out transition delay-100`}>
+        <div className={`w-full ${imgRoute ? "" : ""} h-full   rounded-lg flex items-center hover:scale-105 justify-center ease-in-out transition `}>
           {imgRoute ?
+          // <HoverCard scaleFactor={0.1}>
+        
             <Image src={imgRoute}
-              width={500}
-              height={500}
+              width={0}
+              height={0}
+              sizes="100vw"
               alt="escubi"
+              style={{ width: '100%', height: 'auto' }}
               className="rounded-lg"
             />
+          // </HoverCard>
             :
             <span className="text-gray-400">Imagen / Gráfico</span>
           }
@@ -52,7 +59,7 @@ const Description = () => {
               Bienvenido a <span className="text-5xl text-baleatech-blue">BaleaTech</span>
             </h1>
             <p className="text-xl mt-4 text-gray-500 italic">
-              - Donde nace el compromiso tecnológico con las islas
+              - Donde nace el compromiso tecnológico con las islas.
             </p>
             <p className="text-xl mt-10 text-gray-300">
               Impulsamos la productividad y presencia de tu empresa con la solución Software que necesites, por eso te ofrecemos:
@@ -60,6 +67,7 @@ const Description = () => {
           </header>
 
           <article className="mx-auto w-full format format-sm sm:format-base lg:format-lg format-invert">
+          
             <ZigZagSection
               title="Aplicaciones móviles"
               description="Creamos aplicaciones móvil nativas que convergan con tu web, garantizando la centralización y flexibilidad de los datos de tu empresa"
@@ -68,21 +76,21 @@ const Description = () => {
             />
             <ZigZagSection
               title="Chatbot de IA adaptado"
-              description="Entrenamos e integramos modelos de Inteligencia Artificial con toda la información de tu empresa."
-              imgRoute="/FFlex-ScreenShoot.png"
+              description="Ajustamos e integramos modelos de Inteligencia Artificial con toda la información de tu empresa."
+              imgRoute="/ai-chatbot-free.png"
             />
             <ZigZagSection
               title="Soluciones Web"
               description="Desarrollamos aplicaciones web versátiles incluso a niveles ERP, adaptadas a las necesidades de nuestros clientes."
               reverse
-              imgRoute="/FFlex-ScreenShoot.png"
+              imgRoute="/pcs_idk.png"
             />
             <ZigZagSection
-              title="Bases de datos"
-              description="Somos expertos en la gestión y administración de bases de datos, simplificando al máximo la presentación final de la información."
-              imgRoute="/FFlex-ScreenShoot.png"
+              title="Automatizaciones"
+              description="¿Quieres automatizar funciones en tu empresa? Ofrecemos soluciones completas y escalables a bajo coste"
+              imgRoute="/pngegg.png"
             />
-
+            
             {/* <ZigZagSection
               title="Bases de datos"
               description="Nuestro equipo de expertos está aquí para guiarte en cada paso del proceso de desarrollo."
