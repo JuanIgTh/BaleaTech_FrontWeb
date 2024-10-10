@@ -59,7 +59,7 @@ const ContactForm = () => {
         //     </div>
         // </div>
         // </section>
-        <section id="contacto" class="w-2/3 z-10 h-dvh content-center  flex content-center ">
+        <section id="contacto" class="sm:w-2/3 z-10 h-dvh content-center flex ">
             <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-m content-center ">
                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center  text-baleatech-blue">Contacta con nosotros!</h2>
                 <p class="mb-4   lg:mb-8  text-center text-gray-500 text-gray-400 sm:text-xl">Estamos dispuesto a resolver cualquier duda, no dudes en escribirnos.</p>
