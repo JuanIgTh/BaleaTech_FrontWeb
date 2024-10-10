@@ -6,7 +6,7 @@ const currentYear = new Date().getFullYear();
 export function FooterWithSitemap() {
   return (
     <footer className="relative w-full mb-8">
-      <div className="mx-auto flex justify-center items-center w-full m">
+      <div className="mx-auto grid grid-cols-1 justify-items-center sm:flex justify-center items-center w-full m">
         {/* <div className="mx-auto grid w-full grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
           {SITEMAP.map(({ title, links }, key) => (
             <div key={key} className="w-full">
@@ -45,7 +45,7 @@ export function FooterWithSitemap() {
             height={150}
             alt="escubi" />
         </div>
-        <div className="flex  justify-center w-1/3">
+        <div className="flex hidden sm:visible justify-center w-1/3">
 
           <div className="flex text-blue-900  ">
             <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">
