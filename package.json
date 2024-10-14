@@ -11,9 +11,12 @@
   "dependencies": {
     "@darenft/react-3d-hover-card": "^1.0.9",
     "@emailjs/browser": "^4.4.1",
+    "@headlessui/react": "^2.1.10",
+    "@heroicons/react": "^2.1.5",
     "@material-tailwind/react": "^2.1.9",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.5",
+    "headlessui": "^0.0.0",
     "intersection-observer": "^0.12.2",
     "next": "14.2.5",
     "react": "^18",

@@ -8,14 +8,16 @@ const Hero = () => {
                 <RiArrowDownWideLine size={100} color="white" />
             </div>
             <div className="sm:flex items-center content-center justify-center">
+                <div className='flex justify-center'>
                 <Image
                     src="/Isotipo BT.svg"
                     width={300}
                     height={300}
                     alt="escubi"
 
-                    className="md:animate-fade-right mb-5 animate-fade-down animate-delay-900 animate-once "
+                    className="md:animate-fade-right mb-5 animate-fade-down animate-delay-900 animate-once  "
                 />
+                </div>
                 <Image
                     src="/Logotipo BT.svg"
                     width={600}

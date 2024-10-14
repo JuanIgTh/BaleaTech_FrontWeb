@@ -59,7 +59,7 @@ const ContactForm = () => {
         //     </div>
         // </div>
         // </section>
-        <section id="contacto" class="w-2/3 z-10 h-dvh content-center  flex content-center ">
+        <section id="contacto" class="sm:w-2/3 z-10 h-dvh content-center  flex content-center ">
             <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-m content-center ">
                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center  text-baleatech-blue">Contacta con nosotros!</h2>
                 <p class="mb-4   lg:mb-8  text-center text-gray-500 text-gray-400 sm:text-xl">Estamos dispuesto a resolver cualquier duda, no dudes en escribirnos.</p>
@@ -78,28 +78,28 @@ const ContactForm = () => {
                     </div>
                     <div>   
                         <div className="text-center w-full ">
-                            <button type="submit" class="py-3 px-5  text-sm font-medium text-center text-white rounded-full bg-baleatech-blue sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 bg-primary-600 hover:bg-baleatech-blue focus:ring-primary-800 ">Send message</button>
+                            <button type="submit" class="py-3 px-5  text-sm font-medium text-center text-white rounded-full bg-baleatech-blue sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 bg-primary-600 hover:bg-baleatech-blue focus:ring-primary-800 ">Enviar Mensaje</button>
                         </div>
                     </div>
                 </form>
-                <hr className="mt-6 bg-blue-500" />
+                <hr className="mt-10 bg-blue-500" />
                 <div className="flex justify-around content-center mt-6">
                     <a href="https://www.instagram.com/baleatech">
                         <div className="flex content-center items-center ">
-                            <AiFillInstagram size={50} color="" className="text-baleatech-blue opacity-75 mr-2" />
-                            <label htmlFor="">baleatech</label>
+                            <AiFillInstagram size={50} color="" className="text-baleatech-blue mr-2" />
+                            <label className="hidden sm:block" htmlFor="">@baleatech</label>
                         </div>
                     </a>
                     <a href="tel:555-555-5555">
                         <div className="flex content-center items-center">
-                            <IoLogoWhatsapp size={47} color="" className="text-baleatech-blue opacity-75 mr-2" />
-                            <label htmlFor="">+34 640758702</label>
+                            <IoLogoWhatsapp size={47} color="" className="text-baleatech-blue mr-2" />
+                            <label className="hidden sm:block"  htmlFor="">+34 640758702</label>
                         </div>
                     </a>
                     <a href="">
                         <div className="flex content-center items-center">
-                            <FaSquareFacebook size={45} color="" className="text-baleatech-blue opacity-75 mr-2" />
-                            <label htmlFor="">baleatech</label>
+                            <FaSquareFacebook size={45} color="" className="text-baleatech-blue mr-2" />
+                            <label className="hidden sm:block" htmlFor="">baleatech</label>
                         </div>
                     </a>
 
