@@ -9,7 +9,7 @@ const NavBar = () => {
 
     return (
 
-        <nav id="navbar" className="bg-gradient-to-b from-[#0e0e0e] via-[rgb(0,0,0,0.7)] to-transparent z-50">
+        <nav id="navbar" className="bg-gradient-to-b from-[#0e0e0e] via-[rgb(0,0,0,0.7)] sm:via-transparent to-transparent z-50">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse ">
                     <Image

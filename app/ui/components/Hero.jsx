@@ -3,8 +3,8 @@ import { RiArrowDownWideLine } from "react-icons/ri";
 
 const Hero = () => {
     return (
-        <div id="home" className='w-screen h-screen items-center content-center justify-between flex flex-col md:px-10 px-5 '>
-            <div className="flex items-center content-center justify-center invisible">
+        <div id="home" className='w-screen h-screen items-center content-center justify-between flex flex-col pb-24 md:px-10 px-5 '>
+            <div className="flex items-center content-center justify-center invisible  ">
                 <RiArrowDownWideLine size={100} color="white" />
             </div>
             <div className="sm:flex items-center content-center justify-center">
