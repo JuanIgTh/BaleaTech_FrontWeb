@@ -5,8 +5,8 @@ const currentYear = new Date().getFullYear();
 
 export function FooterWithSitemap() {
   return (
-    <footer className="relative w-full mb-8">
-      <div className="mx-auto flex justify-center items-center w-full m">
+    <footer className="  sm:relative w-full mb-8">
+      <div className="flex-col flex-col-reverse sm:flex sm:flex-row mx-auto flex justify-center items-center w-full ">
         {/* <div className="mx-auto grid w-full grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
           {SITEMAP.map(({ title, links }, key) => (
             <div key={key} className="w-full">
@@ -34,20 +34,20 @@ export function FooterWithSitemap() {
         </div> */}
         <div className="flex justify-center w-1/3">                  <Typography
           variant="small"
-          className="mb-4 text-center text-md font-normal text-blue-900 "
+          className="mb-4 text-center text-md font-normal text-baleatech-blue opacity-75"
         >
-          &copy; {currentYear} <a href="">Baleatech</a>
+          &copy; {currentYear} <a className="font-extrabold	" href="">Baleatech</a>
         </Typography></div>
-        <div className=" flex justify-center w-1/3">
+        <div className=" flex justify-center mb-3 sm:mb-0 w-1/3">
           <Image
             src="/Isotipo BT.svg"
             width={150}
             height={150}
             alt="escubi" />
         </div>
-        <div className="flex  justify-center w-1/3">
+        <div className="flex hidden sm:block justify-center w-1/3">
 
-          <div className="flex text-blue-900  ">
+          <div className="flex text-blue-900 justify-center">
             <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path

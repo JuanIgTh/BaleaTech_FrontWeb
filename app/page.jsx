@@ -27,7 +27,7 @@ const Page = () => {
             <ParticlesBackground />
             <NavBar />
             <Hero />
-            <Description />
+            <Description /> 
             <ContactForm />
             <FooterWithSitemap />
 

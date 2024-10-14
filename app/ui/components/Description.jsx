@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import { useIsVisible } from "./functions/FadeAnimationTW";
+import { useIsVisible } from "../components/functions/FadeAnimationTW";
 import HoverCard from "@darenft/react-3d-hover-card";
 import "@darenft/react-3d-hover-card/dist/style.css";
 
@@ -18,13 +18,13 @@ const ZigZagSection = ({ title, description, reverse, imgRoute }) => {
   return (
     <div
       ref={ref}
-      className={`flex flex-col h-96 md:flex-row ${reverse ? "md:flex-row-reverse" : ""} justify-between transition-opacity ease-in duration-1000 
+      className={`flex flex-col mt-5 sm:h-96 md:flex-row ${reverse ? "md:flex-row-reverse" : ""} justify-between transition-opacity ease-in duration-1000 
       ${hasBeenVisible ? "opacity-100" : "opacity-0"} 
       ${!hasBeenVisible && isVisible ? (reverse ? "animate-fade-right" : "animate-fade-left") : ""}`}
     >
       <div className="md:w-1/2  content-center  ">
         <h2 className="text-5xl font-bold text-baleatech-blue">{title}</h2>
-        <p className="mt-2 text-xl text-gray-300">{description}</p>
+        <p className="mt-2 sm:text-xl text-gray-300">{description}</p>
       </div>
       <div className="md:w-1/2  flex items-center justify-center">
         <div className={`w-full ${imgRoute ? "" : ""} h-full   rounded-lg flex items-center hover:scale-105 justify-center ease-in-out transition `}>
@@ -51,11 +51,11 @@ const ZigZagSection = ({ title, description, reverse, imgRoute }) => {
 
 const Description = () => {
   return (
-    <div id="servicios" className={`z-10 pt-24 md:w-5/6 mx-auto transition-opacity ease-in duration-1000`}>
+    <div id="servicios" className={`z-10 pt-24 sm:w-5/6 transition-opacity ease-in duration-1000`}>
       <main className="  lg:pb-24 bg-[] bg-opacity-75 antialiased">
         <div className="px-4 mx-auto max-w-screen-xl">
           <header className="mb-16">
-            <h1 className="mt-5 text-6xl font-extrabold leading-tight lg:text-4xl text-white">
+            <h1 className="mt-5 text-6xl font-extrabold leading-tight text-3xl md:text-4xl text-white">
               Bienvenido a <span className="text-5xl text-baleatech-blue">BaleaTech</span>
             </h1>
             <p className="text-xl mt-4 text-gray-500 italic">
@@ -77,7 +77,7 @@ const Description = () => {
             <ZigZagSection
               title="Chatbot de IA adaptado"
               description="Ajustamos e integramos modelos de Inteligencia Artificial con toda la información de tu empresa."
-              imgRoute="/ai-chatbot-free.png"
+              imgRoute="/chatbtguay.jpg"
             />
             <ZigZagSection
               title="Soluciones Web"
