@@ -5,13 +5,8 @@ const currentYear = new Date().getFullYear();
 
 export function FooterWithSitemap() {
   return (
-<<<<<<< HEAD
     <footer className="  sm:relative w-full mb-8">
       <div className="flex-col flex-col-reverse sm:flex sm:flex-row mx-auto flex justify-center items-center w-full ">
-=======
-    <footer className="relative w-full mb-8">
-      <div className="mx-auto grid grid-cols-1 justify-items-center sm:flex justify-center items-center w-full m">
->>>>>>> e0f44ca679873153675bfd66924a5722545de195
         {/* <div className="mx-auto grid w-full grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
           {SITEMAP.map(({ title, links }, key) => (
             <div key={key} className="w-full">
@@ -39,7 +34,7 @@ export function FooterWithSitemap() {
         </div> */}
         <div className="flex justify-center w-1/3">                  <Typography
           variant="small"
-          className="mb-4 text-center textz-md font-normal text-baleatech-blue opacity-75"
+          className="mb-4 text-center text-md font-normal text-baleatech-blue opacity-75"
         >
           &copy; {currentYear} <a className="font-extrabold	" href="">Baleatech</a>
         </Typography></div>
@@ -50,11 +45,7 @@ export function FooterWithSitemap() {
             height={150}
             alt="escubi" />
         </div>
-<<<<<<< HEAD
         <div className="flex hidden sm:block justify-center w-1/3">
-=======
-        <div className="flex hidden sm:visible justify-center w-1/3">
->>>>>>> e0f44ca679873153675bfd66924a5722545de195
 
           <div className="flex text-blue-900 justify-center">
             <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">
