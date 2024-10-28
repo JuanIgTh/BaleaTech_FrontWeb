@@ -70,14 +70,14 @@ const Description = () => {
           
             <ZigZagSection
               title="Aplicaciones móviles"
-              description="Creamos aplicaciones móvil nativas que convergan con tu web, garantizando la centralización y flexibilidad de los datos de tu empresa"
-              imgRoute="/mobile-pc.png"
+              description="Creamos aplicaciones móvil nativas que convergan con tu web, garantizando la centralización y flexibilidad de los datos y procesos de tu empresa"
+              imgRoute="/APP_BT.png"
               reverse
             />
             <ZigZagSection
               title="Chatbot de IA adaptado"
-              description="Ajustamos e integramos modelos de Inteligencia Artificial con toda la información de tu empresa."
-              imgRoute="/chatbtguay.jpg"
+              description="Ajustamos e integramos modelos de Inteligencia Artificial con toda la información de tu empresa. ¡Inyéctale conocimiento a tu gusto y aprovéchalo al máximo!"
+              imgRoute="/IA_CHAT_BT2.png"
             />
             <ZigZagSection
               title="Soluciones Web"
@@ -86,9 +86,9 @@ const Description = () => {
               imgRoute="/pcs_idk.png"
             />
             <ZigZagSection
-              title="Automatizaciones"
-              description="¿Quieres automatizar funciones en tu empresa? Ofrecemos soluciones completas y escalables a bajo coste"
-              imgRoute="/pngegg.png"
+              title="Automatización"
+              description="¿Quieres automatizar funciones en tu empresa? Ofrecemos soluciones completas y escalables a bajo coste."
+              imgRoute="/Automatización2.png"
             />
             
             {/* <ZigZagSection

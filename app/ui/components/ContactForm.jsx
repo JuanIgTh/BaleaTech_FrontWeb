@@ -3,6 +3,8 @@ import { AiFillInstagram, AiFillPhone } from "react-icons/ai";
 import emailjs from '@emailjs/browser';
 import { FaSquareFacebook } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
+import { Button } from 'primereact/button';
+import { Toast } from 'primereact/toast';
 
 const ContactForm = () => {
 
@@ -19,14 +21,20 @@ const ContactForm = () => {
             .then(
                 () => {
                     console.log('SUCCESS!');
-                    alert('Message sent successfully!');
                     form.current.reset(); // Clear the form after successful submission
+                    show()
                 },
                 (error) => {
                     console.log('FAILED...', error.text);
                     alert('Message failed to send. Please try again later.');
                 },
             );
+    };
+
+    const toast = useRef(null);
+
+    const show = () => {
+        toast.current.show({ severity: 'success', summary: 'Éxito', detail: 'Hemos recibido tu mensaje' });
     };
 
     return (
@@ -81,6 +89,7 @@ const ContactForm = () => {
                         <div className="text-center w-full ">
                             <button type="submit" class="py-3 px-5  text-sm font-medium text-center text-white rounded-full bg-baleatech-blue sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 bg-primary-600 hover:bg-baleatech-blue focus:ring-primary-800 ">Enviar Mensaje</button>
                         </div>
+                        <Toast ref={toast} position="bottom-right"/>                    
                     </div>
                 </form>
                 <hr className="mt-10 bg-blue-500" />
@@ -103,7 +112,6 @@ const ContactForm = () => {
                             <label className="hidden sm:block" htmlFor="">baleatech</label>
                         </div>
                     </a>
-
                 </div>
             </div>
         </section>

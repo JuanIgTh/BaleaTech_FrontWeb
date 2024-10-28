@@ -19,7 +19,7 @@ const Hero = () => {
                 />
                 </div>
                 <Image
-                    src="/Logotipo BT.svg"
+                    src="/Logotipo BT (1).svg"
                     width={600}
                     height={600}
                     alt="escubi"
