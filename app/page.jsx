@@ -7,6 +7,11 @@ import Description from "./ui/components/Description";
 import ContactForm from "./ui/components/ContactForm";
 import { FooterWithSitemap } from "./ui/components/Footer";
 
+import "primereact/resources/themes/lara-light-cyan/theme.css";
+
+import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
+        
+
 const Page = () => {
     useEffect(() => {
         // When the user scrolls down 20px from the top of the document, slide down the navbar
@@ -23,15 +28,17 @@ const Page = () => {
 
     return (
         // bg-gradient-to-b from-transparent to-black
-        <div className='flex flex-col overflow-x-hidden items-center justify-center bg-gradient-to-b from-transparent to-[#0a0a0a] '>
+        <PrimeReactProvider>
+            <div className='flex flex-col overflow-x-hidden items-center justify-center bg-gradient-to-b from-transparent to-[#0a0a0a] '>
             <ParticlesBackground />
             <NavBar />
             <Hero />
             <Description /> 
             <ContactForm />
             <FooterWithSitemap />
-
         </div>
+        </PrimeReactProvider>
+        
     );
 };
 

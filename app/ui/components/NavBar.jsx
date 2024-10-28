@@ -6,7 +6,6 @@ import Example from "./DropDown";
 
 const NavBar = () => {
 
-
     return (
 
         <nav id="navbar" className="bg-gradient-to-b from-[#0e0e0e] via-[rgb(0,0,0,0.7)] sm:via-transparent to-transparent z-50">
@@ -17,11 +16,10 @@ const NavBar = () => {
                         width={50}
                         height={50}
                         alt="escubi"
-
                         className=""
                     />
                     <Image
-                        src="/Logotipo BT.svg"
+                        src="/Logotipo BT (1).svg"
                         width={150}
                         height={150}
                         alt="escubi"
