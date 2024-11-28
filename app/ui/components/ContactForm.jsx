@@ -85,11 +85,11 @@ const ContactForm = () => {
                         <label for="message" class="block mb-2 text-sm font-medium  text-gray-400">Tu mensaje</label>
                         <textarea id="message" rows="6" class="block p-3 w-full text-sm resize-none	rounded-2xl border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 bg-gray-500 bg-opacity-50 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 shadow-sm-light" placeholder="Deja un comentario..."></textarea>
                     </div>
-                    <div>   
+                    <div>
                         <div className="text-center w-full ">
                             <button type="submit" class="py-3 px-5  text-sm font-medium text-center text-white rounded-full bg-baleatech-blue sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 bg-primary-600 hover:bg-baleatech-blue focus:ring-primary-800 ">Enviar Mensaje</button>
                         </div>
-                        <Toast ref={toast} position="bottom-right"/>                    
+                        <Toast ref={toast} position="bottom-right" />
                     </div>
                 </form>
                 <hr className="mt-10 bg-blue-500" />
@@ -100,18 +100,18 @@ const ContactForm = () => {
                             <label className="hidden sm:block" htmlFor="">@baleatech</label>
                         </div>
                     </a>
-                    <a href="tel:555-555-5555">
+                    <a href="tel:+34640758702">
                         <div className="flex content-center items-center">
-                            <IoLogoWhatsapp size={47} color="" className="text-baleatech-blue mr-2" />
-                            <label className="hidden sm:block"  htmlFor="">+34 640758702</label>
+                            <IoLogoWhatsapp size={50} color="" className="text-baleatech-blue mr-2" />
+                            <label className="hidden sm:block" htmlFor="">+34 640758702</label>
                         </div>
                     </a>
-                    <a href="">
+                    {/* <a href="">
                         <div className="flex content-center items-center">
                             <FaSquareFacebook size={45} color="" className="text-baleatech-blue mr-2" />
                             <label className="hidden sm:block" htmlFor="">baleatech</label>
                         </div>
-                    </a>
+                    </a> */}
                 </div>
             </div>
         </section>
