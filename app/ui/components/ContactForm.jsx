@@ -10,32 +10,32 @@ const ContactForm = () => {
 
     const form = useRef();
 
-    const sendEmail = (e) => {
-        e.preventDefault()
-        // alert(process.env.NEXT_PUBLIC_SERVICE_ID)
-        // alert(process.env.NEXT_PUBLIC_TEMPLATE_ID)
-        // alert(process.env.NEXT_PUBLIC_PUBLIC_KEY)
-        emailjs
-
-            .sendForm(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_TEMPLATE_ID, form.current, process.env.NEXT_PUBLIC_PUBLIC_KEY)
-            .then(
-                () => {
-                    console.log('SUCCESS!');
-                    form.current.reset(); // Clear the form after successful submission
-                    show()
-                },
-                (error) => {
-                    console.log('FAILED...', error.text);
-                    alert('Message failed to send. Please try again later.');
-                },
-            );
-    };
+    const sendEmail = async (e) => {
+        e.preventDefault();
+    
+        const formData = new FormData(form.current);
+        const data = Object.fromEntries(formData.entries());
+    
+        const response = await fetch("/api/sendEmail", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+    
+        if (response.ok) {
+            show('success', 'Éxito', 'Hemos recibido tu mensaje');
+            form.current.reset();
+        } else {
+            show('error', 'Error', 'Ha ocurrido un error.');
+        }
+      };
 
     const toast = useRef(null);
 
-    const show = () => {
-        toast.current.show({ severity: 'success', summary: 'Éxito', detail: 'Hemos recibido tu mensaje' });
+    const show = (severity, summary, detail) => {
+        toast.current.show({ severity: severity, summary: summary, detail: detail });
     };
+    
 
     return (
         // <section id="contacto" className="w-2/3 z-10 h-dvh content-center flex  items-center">
@@ -75,15 +75,15 @@ const ContactForm = () => {
                 <form ref={form} onSubmit={sendEmail} action="#" class="space-y-8 ">
                     <div>
                         <label for="email" class="block mb-2 text-sm font-medium  text-gray-300">Email</label>
-                        <input type="email" id="email" class="block p-3 w-full text-sm   rounded-xl border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 bg-gray-500 bg-opacity-50 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 shadow-sm-light" placeholder="tu-mail@mail.com" required></input>
+                        <input type="email" id="email" name="email" class="block p-3 w-full text-sm   rounded-xl border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 bg-gray-500 bg-opacity-50 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 shadow-sm-light" placeholder="tu-mail@mail.com" required></input>
                     </div>
                     <div>
                         <label for="subject" class="block mb-2 text-sm font-medium  text-gray-300">Asunto</label>
-                        <input type="text" id="subject" class="block p-3 w-full text-sm   rounded-xl border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 bg-gray-500 bg-opacity-50 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 shadow-sm-light" placeholder="Cuéntanos tu idea" required></input>
+                        <input type="text" id="subject" name="subject" class="block p-3 w-full text-sm   rounded-xl border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 bg-gray-500 bg-opacity-50 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 shadow-sm-light" placeholder="Cuéntanos tu idea" required></input>
                     </div>
                     <div class="sm:col-span-2">
                         <label for="message" class="block mb-2 text-sm font-medium  text-gray-400">Tu mensaje</label>
-                        <textarea id="message" rows="6" class="block p-3 w-full text-sm resize-none	rounded-2xl border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 bg-gray-500 bg-opacity-50 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 shadow-sm-light" placeholder="Deja un comentario..."></textarea>
+                        <textarea id="message" name="message" rows="6" class="block p-3 w-full text-sm resize-none	rounded-2xl border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 bg-gray-500 bg-opacity-50 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 shadow-sm-light" placeholder="Deja un comentario..."></textarea>
                     </div>
                     <div>
                         <div className="text-center w-full ">
