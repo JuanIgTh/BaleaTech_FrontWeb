@@ -12,14 +12,14 @@ const NavBar = () => {
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse ">
                     <Image
-                        src="/Isotipo BT.svg"
+                        src="/Isotipo_BT.svg"
                         width={50}
                         height={50}
                         alt="escubi"
                         className=""
                     />
                     <Image
-                        src="/Logotipo BT (1).svg"
+                        src="/Logotipo_BT.svg"
                         width={150}
                         height={150}
                         alt="escubi"
