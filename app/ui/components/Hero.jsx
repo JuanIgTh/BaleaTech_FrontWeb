@@ -10,7 +10,7 @@ const Hero = () => {
             <div className="sm:flex items-center content-center justify-center">
                 <div className='flex justify-center'>
                 <Image
-                    src="/Isotipo BT.svg"
+                    src="/Isotipo_BT.svg"
                     width={300}
                     height={300}
                     alt="escubi"
@@ -19,7 +19,7 @@ const Hero = () => {
                 />
                 </div>
                 <Image
-                    src="/Logotipo BT (1).svg"
+                    src="/Logotipo_BT.svg"
                     width={600}
                     height={600}
                     alt="escubi"
