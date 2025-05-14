@@ -40,7 +40,7 @@ export function FooterWithSitemap() {
         </Typography></div>
         <div className=" flex justify-center mb-3 sm:mb-0 w-1/3">
           <Image
-            src="/Isotipo BT.svg"
+            src="/Isotipo BT_.svg"
             width={150}
             height={150}
             alt="escubi" />
