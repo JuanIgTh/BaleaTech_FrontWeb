@@ -68,7 +68,7 @@ const ContactForm = () => {
         // </div>
         // </section>
 
-        <section id="contacto" class="sm:w-2/3 z-10 h-svh sm:h-dvh content-center flex ">
+        <section id="contacto" class="sm:w-2/3 z-10 h-svh sm:h-dvh content-center flex mb-8">
             <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-m content-center ">
                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center  text-baleatech-blue">Contacta con nosotros!</h2>
                 <p class="mb-4   lg:mb-8  text-center text-gray-500 text-gray-400 sm:text-xl">Estamos dispuesto a resolver cualquier duda, no dudes en escribirnos.</p>
@@ -92,7 +92,7 @@ const ContactForm = () => {
                         <Toast ref={toast} position="bottom-right" />
                     </div>
                 </form>
-                <hr className="mt-10 bg-blue-500" />
+                <hr class=" h-1 mt-10 bg-gray-100 border-0 rounded-sm dark:bg-baleatech-blue"/>
                 <div className="flex justify-around content-center mt-6">
                     <a href="https://www.instagram.com/baleatech">
                         <div className="flex content-center items-center ">
