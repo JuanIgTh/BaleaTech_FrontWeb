@@ -5,7 +5,7 @@ const currentYear = new Date().getFullYear();
 
 export function FooterWithSitemap() {
   return (
-    <footer className="  sm:relative w-full mb-8">
+    <footer className="  w-full mb-8 mt-1">
       <div className="flex-col flex-col-reverse sm:flex sm:flex-row mx-auto flex justify-center items-center w-full ">
         {/* <div className="mx-auto grid w-full grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
           {SITEMAP.map(({ title, links }, key) => (
@@ -40,7 +40,7 @@ export function FooterWithSitemap() {
         </Typography></div>
         <div className=" flex justify-center mb-3 sm:mb-0 w-1/3">
           <Image
-            src="/Isotipo BT.svg"
+            src="/Isotipo_BT.svg"
             width={150}
             height={150}
             alt="escubi" />
