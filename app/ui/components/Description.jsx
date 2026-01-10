@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useIsVisible } from "../components/functions/FadeAnimationTW";
 import HoverCard from "@darenft/react-3d-hover-card";
 import "@darenft/react-3d-hover-card/dist/style.css";
+import OurProducts from "./OurProducts";
 
 const ZigZagSection = ({ title, description, reverse, imgRoute }) => {
   const ref = useRef();
@@ -51,7 +52,7 @@ const ZigZagSection = ({ title, description, reverse, imgRoute }) => {
 
 const Description = () => {
   return (
-    <div id="servicios" className={`z-10 pt-24 sm:w-5/6 transition-opacity ease-in duration-1000`}>
+    <div className={`z-10 pt-24 sm:w-5/6 transition-opacity ease-in duration-1000`}>
       <main className="  lg:pb-24 bg-[] bg-opacity-75 antialiased">
         <div className="px-4 mx-auto max-w-screen-xl">
           <header className="mb-16">
@@ -66,6 +67,15 @@ const Description = () => {
             </p>
           </header>
 
+          <OurProducts />
+          <h2  id="servicios" className="
+          pt-16
+          text-4xl font-extrabold text-center
+          text-white mb-10
+          tracking-widest
+          ">
+          <span className="text-baleatech-blue">Nuestros</span> Servicios
+          </h2>
           <article className="mx-auto w-full format format-sm sm:format-base lg:format-lg format-invert">
           
             <ZigZagSection

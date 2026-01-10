@@ -39,7 +39,10 @@ const NavBar = () => {
                         <ul className="md:flex text-lg">
                             <a href="#home" className="nav-link text-[#ffff] hover:text-white mr-4">Home</a>
 
+                            <a href="#productos" className="text-[#0a72fa] hover:text-white mr-4">Nuestros productos</a>
+
                             <a href="#servicios" className="text-[#0a72fa] hover:text-white mr-4">Nuestros servicios</a>
+
                             {/* <a href="#" className="text-[#0a72fa] hover:text-white mr-4">Pricing</a> */}
                             <a href="#contacto" className="text-[#0a72fa] hover:text-white">Contacto</a>
                         </ul>
