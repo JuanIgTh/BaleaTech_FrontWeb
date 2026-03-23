@@ -9,27 +9,35 @@ const ContactForm = () => {
 
     const form = useRef();
     const [formLoadedAt] = useState(() => Date.now());
+    const [sending, setSending] = useState(false);
 
     const sendEmail = async (e) => {
         e.preventDefault();
+        setSending(true);
 
-        const formData = new FormData(form.current);
-        const data = Object.fromEntries(formData.entries());
-        data._timestamp = formLoadedAt;
+        try {
+            const formData = new FormData(form.current);
+            const data = Object.fromEntries(formData.entries());
+            data._timestamp = formLoadedAt;
 
-        const response = await fetch("/api/sendEmail", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
-    
-        if (response.ok) {
-            show('success', 'Éxito', 'Hemos recibido tu mensaje');
-            form.current.reset();
-        } else if (response.status === 429) {
-            show('warn', 'Espera', 'Demasiados envíos. Inténtalo en unos minutos.');
-        } else {
-            show('error', 'Error', 'Ha ocurrido un error.');
+            const response = await fetch("/api/sendEmail", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                show('success', 'Éxito', 'Hemos recibido tu mensaje');
+                form.current.reset();
+            } else if (response.status === 429) {
+                show('warn', 'Espera', 'Demasiados envíos. Inténtalo en unos minutos.');
+            } else {
+                show('error', 'Error', 'Ha ocurrido un error.');
+            }
+        } catch {
+            show('error', 'Error', 'No se pudo conectar con el servidor.');
+        } finally {
+            setSending(false);
         }
       };
 
@@ -92,7 +100,17 @@ const ContactForm = () => {
                     </div>
                     <div>
                         <div className="text-center w-full ">
-                            <button type="submit" class="py-3 px-5  text-sm font-medium text-center text-white rounded-full bg-baleatech-blue sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 bg-primary-600 hover:bg-baleatech-blue focus:ring-primary-800 ">Enviar Mensaje</button>
+                            <button type="submit" disabled={sending} class="py-3 px-5 text-sm font-medium text-center text-white rounded-full bg-baleatech-blue sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 bg-primary-600 hover:bg-baleatech-blue focus:ring-primary-800 disabled:opacity-50 disabled:cursor-not-allowed">
+                                {sending ? (
+                                    <span className="flex items-center gap-2">
+                                        <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                                        </svg>
+                                        Enviando...
+                                    </span>
+                                ) : 'Enviar Mensaje'}
+                            </button>
                         </div>
                         <Toast ref={toast} position="bottom-right" />
                     </div>
