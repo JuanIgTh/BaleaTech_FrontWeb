@@ -1,6 +1,5 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { AiFillInstagram, AiFillPhone } from "react-icons/ai";
-import emailjs from '@emailjs/browser';
 import { FaSquareFacebook } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { Button } from 'primereact/button';
@@ -9,13 +8,15 @@ import { Toast } from 'primereact/toast';
 const ContactForm = () => {
 
     const form = useRef();
+    const [formLoadedAt] = useState(() => Date.now());
 
     const sendEmail = async (e) => {
         e.preventDefault();
-    
+
         const formData = new FormData(form.current);
         const data = Object.fromEntries(formData.entries());
-    
+        data._timestamp = formLoadedAt;
+
         const response = await fetch("/api/sendEmail", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -25,6 +26,8 @@ const ContactForm = () => {
         if (response.ok) {
             show('success', 'Éxito', 'Hemos recibido tu mensaje');
             form.current.reset();
+        } else if (response.status === 429) {
+            show('warn', 'Espera', 'Demasiados envíos. Inténtalo en unos minutos.');
         } else {
             show('error', 'Error', 'Ha ocurrido un error.');
         }
@@ -73,6 +76,8 @@ const ContactForm = () => {
                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center  text-baleatech-blue">Contacta con nosotros!</h2>
                 <p class="mb-4   lg:mb-8  text-center text-gray-500 text-gray-400 sm:text-xl">Estamos dispuesto a resolver cualquier duda, no dudes en escribirnos.</p>
                 <form ref={form} onSubmit={sendEmail} action="#" class="space-y-8 ">
+                    {/* Honeypot anti-bot: invisible para usuarios, los bots lo rellenan */}
+                    <input type="text" name="_honeypot" style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0 }} tabIndex={-1} autoComplete="off" />
                     <div>
                         <label for="email" class="block mb-2 text-sm font-medium  text-gray-300">Email</label>
                         <input type="email" id="email" name="email" class="block p-3 w-full text-sm   rounded-xl border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 bg-gray-500 bg-opacity-50 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500 shadow-sm-light" placeholder="tu-mail@mail.com" required></input>
