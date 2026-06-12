@@ -25,8 +25,8 @@ const ProductsSection = () => {
                 title="Sweet CRM"
                 description="Una solución inteligente para gestionar clientes y automatizar procesos."
                 image="/screenshot_sweet.png"
-                badge="PRÓXIMAMENTE"
-                url="https://baleatech-crm.vercel.app/#/"
+                badge="NUEVO"
+                url="http://sweet.baleatech.com/"
             />
 
         </div>
